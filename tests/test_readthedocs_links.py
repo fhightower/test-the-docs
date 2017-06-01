@@ -17,9 +17,12 @@ def _get_headings(soup):
 def test_links():
     """."""
     bad_links = 0
-    base_url = 'https://onemillion.readthedocs.io/'
+    base_url = 'https://test-the-docs.readthedocs.io'
     # TODO: consider dynamically pulling the links below:
-    docs_pages = ['https://onemillion.readthedocs.io/en/latest/']
+    docs_pages = ['https://test-the-docs.readthedocs.io/en/latest/index.html',
+                  'https://test-the-docs.readthedocs.io/en/latest/usage.html',
+                  'https://test-the-docs.readthedocs.io/en/latest/examples.html',
+                  'https://test-the-docs.readthedocs.io/en/latest/test.html']
 
     for page in docs_pages:
         print("\n\n>>> Reviewing {}".format(page))

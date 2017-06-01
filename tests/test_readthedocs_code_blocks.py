@@ -6,7 +6,9 @@ import bs4
 import requests
 
 mappings = {
-    '../docs/': 'https://test-the-docs.readthedocs.io/en/latest'
+    '../docs/examples.rst': 'https://test-the-docs.readthedocs.io/en/latest/examples.html',
+    '../docs/test.rst': 'https://test-the-docs.readthedocs.io/en/latest/test.html',
+    '../docs/usage.rst': 'https://test-the-docs.readthedocs.io/en/latest/usage.html',
 }
 
 
@@ -19,15 +21,15 @@ def get_code_blocks_from_rtd(readthedocs_link):
     return len(code_divs)
 
 
-def get_code_blocks_from_rst(directory):
+def get_code_blocks_from_rst(file_path):
     """Find all of the code blocks in the restructured text files."""
     code_block_count = 0
     pattern = "\.\. code(-block)?::"
 
-    for path, dirs, files in os.walk(directory):
-        for file_ in files:
-            with open(os.path.join(path, file_), 'r') as f:
-                code_block_count += len(re.findall(pattern, f.read()))
+    # open the given file
+    with open(file_path, 'r') as f:
+        # count the number of code blocks found in the file
+        code_block_count += len(re.findall(pattern, f.read()))
 
     return code_block_count
 
