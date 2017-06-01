@@ -34,7 +34,4 @@ The block above is not tested because it has the *no-test* comment before it. If
     .. 
         no-test
 
-    .. code-block:: python
-
-        one = 1
-        assert(one == 2)
+    .. code-block...
