@@ -2,6 +2,9 @@
 Examples
 ********
 
+Exhibit 0: Failing Code Block
+=============================
+
 The following code block will be tested and raise an error:
 
 .. code-block:: python
@@ -9,6 +12,8 @@ The following code block will be tested and raise an error:
     one = 1
     assert(one == 2)
 
+Exhibit 1: Passing Code Block
+=============================
 
 The following code block will be tested and will not raise an error:
 
@@ -16,6 +21,9 @@ The following code block will be tested and will not raise an error:
 
     one = 1
     assert(one == 1)
+
+Exhibit 2: Ignored Code Block
+=============================
 
 The following code block will **NOT** be tested:
 
